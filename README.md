@@ -43,5 +43,5 @@ sudo apt-get install libncurses5-dev
 - build the project by executing the following command:
 
 ```sh
-gcc pong.c -o pong -lncurses
+make
 ```
