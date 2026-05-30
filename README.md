@@ -41,7 +41,7 @@ On a Linux distribution:
 sudo apt-get install libncurses5-dev
 ```
 
-- build the project by executing the following command:
+- Build the project by executing the following command:
 
 ```sh
 make
