@@ -22,9 +22,10 @@ k(down)
 
 On a Linux distribution:
 
-1. Open the terminal
-2. Go to the directory containing `pong` file
-3. Execute the following command
+1. Build the project (see Installation)
+2. Open the terminal
+3. Go to the directory containing `pong` file
+4. Execute the following command
 
 ```sh
 ./pong
