@@ -1,5 +1,7 @@
 # Pong built using ASCII characters
 
+The `compression` branch has the sole purpose of making the compiled binary as small as possible.
+
 ## Overview
 
 - ASCII based pong game written in C.
