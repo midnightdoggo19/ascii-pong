@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-
 #define BAT_LENGTH 5
 #define BAT_CHAR '#'
 #define BALL_CHAR 'O'
@@ -37,13 +36,13 @@ int main() {
         input();
         logic();
         draw();
-        usleep(SLEEP_TIME); // decides the pacew of the game 
+        usleep(SLEEP_TIME); // decides the pacew of the game
     }
 
     endwin();
 
     // Print final score
-    printf("Hoipe you enjoyed!\n");
+    printf("Hope you enjoyed!\n");
     printf("Final Score -> Player 1: %d | Player 2: %d\n", score1, score2);
 
     return 0;
