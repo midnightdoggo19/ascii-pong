@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
         input();
         logic();
         draw();
-        usleep(SLEEP_TIME); // decides the pacew of the game
+        usleep(SLEEP_TIME); // decides the pace of the game
     }
 
     endwin();
@@ -137,7 +137,7 @@ void logic() {
         ball.dx *= -1;
     }
 
-    // Score when ball goes beyond terminal windOw in the x direction
+    // Score when ball goes beyond terminal window in the x direction
     if (ball.x < 1) {
         score2++;
         reset_positions();
