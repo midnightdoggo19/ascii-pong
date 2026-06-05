@@ -23,14 +23,32 @@ int p1_y, p2_y; // BAT's Y position
 int score1, score2;
 bool game_over;
 
+typedef struct keymap {
+	char p1up;
+	char p1down;
+	char p2up;
+	char p2down;
+};
+struct keymap defaultbindings = {'w', 'a', 'i', 'k'};
+struct keymap *bindings = &defaultbindings;
+
 void setup();
 void reset_positions();
 void draw();
 void input();
 void logic();
 
-int main() {
+int main(int argc, char* argv[]) {
     setup();
+
+    // set keybingings
+    if (argc > 1) {
+        bindings->p1up = argv[1][0];
+        bindings->p1down = argv[1][1];
+
+        bindings->p2up = argv[2][0];
+        bindings->p2down = argv[2][1];
+    }
 
     while (!game_over) {
         input();
@@ -94,13 +112,12 @@ void draw() {
 // handle input
 void input() {
     int key = getch();
-    switch (key) {
-        case 'w': if (p1_y > 2) p1_y--; break;
-        case 's': if (p1_y < g_height - BAT_LENGTH - 2) p1_y++; break;
-        case 'i': if (p2_y > 2) p2_y--; break;
-        case 'k': if (p2_y < g_height - BAT_LENGTH - 2) p2_y++; break;
-        case 'q': game_over = true; break;
-    }
+
+    if ((key == ((int) bindings->p1up)) && (p1_y > 2)) p1_y--;
+    if ((key == ((int) bindings->p1down) && (p1_y < g_height - BAT_LENGTH - 2))) p1_y++;
+    if ((key == ((int) bindings->p2up) && (p2_y > 2))) p2_y--;
+    if ((key == ((int) bindings->p2down) && (p2_y < g_height - BAT_LENGTH - 2))) p2_y++;
+    if (key == 'q') game_over = true;
 }
 
 void logic() {
