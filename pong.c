@@ -62,6 +62,8 @@ int main(int argc, char* argv[]) {
     // Print final score
     printf("Hope you enjoyed!\n");
     printf("Final Score -> Player 1: %d | Player 2: %d\n", score1, score2);
+    if (score1 > score2) printf("Player 1 wins!\n");
+    else printf("Player 2 wins!\n");
 
     return 0;
 }
