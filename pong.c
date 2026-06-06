@@ -84,8 +84,9 @@ void setup() {
 
 void reset_positions() {
     p1_y = p2_y = g_height / 2 - BAT_LENGTH / 2;
-    ball.x = g_width / 2.0f;
-    ball.y = g_height / 2.0f;
+
+    ball.x = rand() % (g_width + 1);
+    ball.y = rand() % (g_height + 1);
 
     // Set a random initial direction for the ball
     ball.dx = (rand() % 2 == 0) ? 1.0f : -1.0f;
